@@ -1,4 +1,4 @@
-package br.com.monstro.fakeapied.infrastructure;
+package br.com.monstro.fakeapied.infrastructure.client;
 
 import java.util.List;
 
