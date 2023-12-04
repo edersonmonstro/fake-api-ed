@@ -2,5 +2,5 @@
 
 API to be consumed: https://fakestoreapi.com/
 
-tutorial stopped at 19:40s
+tutorial stopped at 39:00s
 

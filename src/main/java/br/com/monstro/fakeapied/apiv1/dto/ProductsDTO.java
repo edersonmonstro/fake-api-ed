@@ -20,8 +20,11 @@ public class ProductsDTO {
     @JsonProperty(value = "id")
     private Long id;
 
+    @JsonProperty(value = "entity_id")
+    private String entityId;
+
     @JsonProperty(value = "title")
-    private String titulo;
+    private String nome;
 
     @JsonProperty(value = "price")
     private BigDecimal preco;
