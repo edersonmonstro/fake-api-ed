@@ -2,6 +2,7 @@ package br.com.monstro.fakeapied.apiv1.dto;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ import lombok.Setter;
 public class ProductsDTO {
     
     @JsonProperty(value = "id")
+    @JsonIgnore
     private Long id;
 
     @JsonProperty(value = "entity_id")

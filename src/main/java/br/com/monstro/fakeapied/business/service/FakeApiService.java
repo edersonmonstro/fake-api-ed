@@ -29,7 +29,7 @@ public class FakeApiService {
                 //throw new RuntimeException(String.format("Produto já cadastrado no banco de dados", produto.getNome()));
             }
             );
-            return converter.toListDTO(service.buscaTodosProdutos());
+            return service.buscaTodosProdutos();
         } catch(Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Erro ao buscar e salvar produtos no banco de dados");

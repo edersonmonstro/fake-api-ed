@@ -2,5 +2,6 @@
 
 API to be consumed: https://fakestoreapi.com/
 
-tutorial stopped at 48:00s
+tutorial stopped at 1:09:00s
 
+http://localhost:8181/swagger-ui/index.html
