@@ -20,14 +20,20 @@ public class FakeApiService {
     public List<ProductsDTO> buscaProdutos(){
 
         try{
-
-        } catch (Exception e) {
-            
+            List<ProductsDTO> dto = cliente.buscaListaProdutos();
+            dto.forEach(produto -> {
+                Boolean retorno =  service.existPorNome(produto.getNome());
+                if(retorno.equals(false)){
+                    service.salvaProduto(converter.toEntity(produto));
+                }
+                //throw new RuntimeException(String.format("Produto já cadastrado no banco de dados", produto.getNome()));
+            }
+            );
+            return converter.toListDTO(service.buscaTodosProdutos());
+        } catch(Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Erro ao buscar e salvar produtos no banco de dados");
         }
-        List<ProductsDTO> dto = cliente.buscaListaProdutos();
-        dto.forEach(produto -> service.salvaProduto(converter.toEntity(produto))
         
-        );
-        return converter.toListDTO(service.buscaTodosProdutos());
     }
 }

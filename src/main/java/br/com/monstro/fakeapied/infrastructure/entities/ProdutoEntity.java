@@ -13,14 +13,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "ProdutoEntity")
 @Table(name = "produtos")
 @Getter 
 @Setter 
-@RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class ProdutoEntity {
@@ -29,19 +28,19 @@ public class ProdutoEntity {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "title")
+    @Column(name = "title", length = 1000)
     private String nome;
 
     @Column(name = "price")
     private BigDecimal preco;
     
-    @Column(name = "category")
+    @Column(name = "category", length = 1000)
     private String categoria;
     
-    @Column(name = "description")
+    @Column(name = "description", length = 1000)
     private String descricao;
     
-    @Column(name = "image")
+    @Column(name = "image", length = 2000)
     private String imagem;
 
     @Column(name = "data_inclusao")

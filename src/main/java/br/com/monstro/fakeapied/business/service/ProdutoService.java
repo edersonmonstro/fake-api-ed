@@ -13,13 +13,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ProdutoService {
 
-    private ProdutoRepository repository;
+    private final ProdutoRepository repository;
     
     public ProdutoEntity salvaProduto(ProdutoEntity entity){
         try {
             return repository.save(entity);
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao salvar produtos" + e);
+            throw new RuntimeException("Erro ao salvar produtos " + e);
         }
     }
 
@@ -27,8 +27,16 @@ public class ProdutoService {
         try{
             return repository.findAll();
         } catch (Exception e){
-            throw new RuntimeException("Erro ao buscar todos os produtos" + e);
+            throw new RuntimeException("Erro ao buscar todos os produtos " + e);
         }
     }
+
+public Boolean existPorNome(String nome){
+    try{
+        return repository.existsByNome(nome);
+    } catch (Exception e) {
+        throw new RuntimeException(String.format("Erro ao buscar produto por nome ", nome) + e);
+    }
+}
 
 }
